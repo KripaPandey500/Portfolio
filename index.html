@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kripa Pandey - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      color: #000;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #000;
+      padding: 1rem 3rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .logo-container img {
+      height: 55px;
+      cursor: pointer;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+      letter-spacing: 1px;
+    }
+
+    section {
+      padding: 40px 30px;
+      max-width: 1200px;
+      margin: auto;
+      scroll-margin-top: 80px; 
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #111;
+    }
+    #home {
+      display: flex;
+      min-height: 130vh;
+      background: #ffffff;
+      color: #fff;
+    }
+
+    #home .left {
+      min-height: 100vh;
+      width: 40%;
+      background: #262222;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    #home .left h1 {
+      font-size: 2.5rem;
+      margin: 0.5rem 0;
+      font-weight: 700;
+    }
+
+    #home .left p {
+      font-size: 1.1rem;
+    }
+
+    .socials {
+      margin-top: 1.5rem;
+    }
+
+    .socials a {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      transition: color 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00bcd4;
+    }
+#home .right {
+  width: 60%;
+  background: #000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0; 
+  overflow: hidden;
+  
+}
+
+#home .right img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  
+}
+
+#about p, #about ul {
+  max-width: 900px;
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+  color: #000;
+  text-align: center; 
+}
+
+#about ul {
+  padding-left: 0; 
+  list-style-position: inside; 
+}
+.education-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.education-row {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.edu-box {
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 350px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-box:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  cursor: pointer; 
+}
+
+.edu-box h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.edu-box p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.edu-box img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 0.8rem;
+}
+
+
+    .experience-imgs {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .experience-imgs img {
+      width: 350px;
+      height: 350px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .experience-imgs img:hover {
+      transform: scale(1.05);
+    }
+
+    .skills-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .skills-icons img {
+      width: 100px;
+      height: 100px;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-icons img:hover {
+      transform: scale(1.1);
+    }
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.project {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+}
+
+.project img {
+  width: 90%;
+  height: 330px;
+  object-fit: cover; 
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+    .portfolio-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .portfolio-images img {
+      max-width: 340px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-images img:hover {
+      transform: scale(1.05);
+    }
+
+.certifications {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  margin-top: 2rem;
+  justify-items: center;
+}
+
+.certifications img {
+      max-width: 340px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .certifications img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+      }
+
+      #home .left,
+      #home .right {
+        width: 100%;
+      }
+
+      #home .right img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <a href="#home"><img src="logo.png" alt="Logo"></a>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#portfolio">Profile</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="left">
+      <p>Hello, I am</p>
+      <h1>Kripa Pandey</h1>
+
+      <div class="socials">
+        <a href="#contact"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/KripaPandey500" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/kripa-pandey-380919292/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="right">
+      <img src="me.png" alt="Kripa Pandey" />
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-title">About Me</div>
+    <p>Hello! I’m Kripa Pandey, a passionate and curious student currently pursuing a Bachelor's in Information Technology at Informatics College Pokhara.
+       With a strong interest in both design and development, I enjoy transforming ideas into meaningful digital experiences. 
+       I have hands-on experience in graphic design, web development, and data entry. I'm always eager to learn, experiment, and grow—whether it’s through coding, creating visual content, or collaborating on new ideas.
+       Let’s build something creative and impactful together!</p>
+
+
+<h1 style="text-align: center; margin-top: 2rem;">Education</h1>
+<div class="education-row">
+  <div class="edu-box">
+    <img src="revival.jpg" alt="SEE Logo" />
+    <h4>SEE (10th)</h4>
+    <p>Ramapur Revival English Boarding School</p>
+    <p>Sainamaina-08, Ramapur, Rupandehi</p>
+  </div>
+  <div class="edu-box">
+    <img src="oxford.png" alt="Oxford College" />
+    <h4>+2 (Science)</h4>
+    <p>Oxford Secondary School XI and XII</p>
+    <p>Sukkhanagar- 06, Butwal, Rupandehi</p>
+  </div>
+  <div class="edu-box">
+    <img src="icp.png" alt="Informatics College Pokhara" />
+    <h4>Bachelor's in Information and Technology</h4>
+    <p>Informatics College Pokhara</p>
+    <p>Lions Marga, Matepani, Pokhara,</p>
+  </div>
+</div>
+
+
+    <h1 style="text-align: center; margin-top: 2rem;">Experience</h1>
+    <p style="text-align: center;">Worked as a graphic design intern at Asian Lumbini Tours & Travels, 
+      creating posters, pamphlets, flyers, and promotional materials for travel campaigns.</p>
+    <div class="experience-imgs">
+      <img src="e1.png" alt="Design Work 1">
+      <img src="e2.png" alt="Design Work 2">
+      <img src="e3.png" alt="Design Work 3">
+      <img src="e4.png" alt="Design Work 1">
+      <img src="e5.png" alt="Design Work 2">
+      <img src="e6.png" alt="Design Work 3">
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-title">Skills</div>
+    <div class="skills-icons">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" title="HTML" />
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" title="CSS" />
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" title="JavaScript" />
+      <img src="https://cdn-icons-png.flaticon.com/512/1126/1126012.png" title="React" />
+      <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" title="Node.js" />
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" title="Python" />
+      <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" title="Java" />
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" title="GitHub" />
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="section-title">Projects</div>
+    <div class="project-gallery">
+      <div class="project">
+        <img src="p1.jpg" alt="Smart Coffee Maker">
+        <p><strong>Smart Agriculture</strong><br> An IoT-based Smart Agriculture system using Arduino for efficient farming.</p>
+      </div>
+      <div class="project">
+        <img src="p2.png" alt="Portfolio Website">
+        <p><strong>Tic Tac Toe</strong><br> A simple Tic Tac Toe game built using HTML, CSS, and JavaScript where two players take turns to win.</p>
+      </div>
+      <div class="project">
+        <img src="p3.png" alt="Event Registration System">
+        <p><strong>Calculator</strong><br>A basic calculator made with HTML, CSS, and JavaScript to perform simple arithmetic operations.</p>
+      </div>
+      <div class="project">
+        <img src="p4.png" alt="Data Entry for Events">
+        <p><strong>Scissors Paper Rock</strong><br> A fun Rock, Paper, Scissors game built with HTML, CSS, and JavaScript where you play against the computer.</p>
+      </div>
+      <div class="project">
+        <img src="p5.png" alt="Weather App">
+        <p><strong>An Age Calculator</strong><br> An interactive Age Calculator that lets users input their birthdate to instantly find out their exact age in years, months, and days.</p>
+      </div>
+      <div class="project">
+        <img src="p6.png" alt="Basic Calculator">
+        <p><strong>Lehvana Website</strong><br> A full-stack website for Lehvana, an ethical clothing brand, featuring user login, product showcase, and cart functionality.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="section-title">Profile</div>
+    <div class="portfolio-images">
+      <img src="insta.png" alt="Instagram Profile Screenshot" />
+      <img src="linkedin.png" alt="LinkedIn Profile Screenshot" />
+      <img src="github.png" alt="GitHub Profile Screenshot" />
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-title">Certifications</div>
+    <div class="certifications">
+      <img src="aws 1.png" alt="Canva Certificate">
+      <img src="aws 2.png" alt="AWS Certificate">
+      <img src="canva 2.png" alt="Java Basics Certificate">
+      <img src="l1 (1).png" alt="Python Basics Certificate">
+      <img src="l1 (2).png" alt="React Beginner Certificate">
+      <img src="l1 (3).png" alt="React Beginner Certificate">
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">Contact</div>
+    <p style="text-align: center; max-width: 700px; margin: auto; font-size: 1.1rem;">
+      Feel free to reach out to me for collaboration, freelance projects, or just to say hello!
+    </p>
+    <div style="text-align: center; margin-top: 30px; font-size: 1.1rem; line-height: 2;">
+      <p><strong>📍 Address:</strong> Malepatan-05, Pokhara, Nepal</p>
+      <p><strong>📧 Email:</strong> kripapandey03@gmail.com</p>
+      <p><strong>📞 Phone:</strong> +977 9867424302</p>
+      <p><strong>🔗 GitHub:</strong> <a href="https://github.com/KripaPandey500" target="_blank">github.com/KripaPandey500</a></p>
+      <p><strong>💼 LinkedIn:</strong> <a href="https://www.linkedin.com/in/kripa-pandey-380919292/" target="_blank">linkedin.com/in/kripa-pandey</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Kripa Pandey. All Rights Reserved.
+  </footer>
+</body>
+</html>
